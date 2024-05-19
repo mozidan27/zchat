@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:zchat/components/my_button.dart';
 import 'package:zchat/components/my_text_field.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key, required this.onTap});
+class RegisterPage extends StatelessWidget {
+  RegisterPage({super.key, required this.onTap});
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pWController = TextEditingController();
+  final TextEditingController _confirmPwController = TextEditingController();
   final Function()? onTap;
 
   @override
@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
 
             // welcome text
             Text(
-              'Welcome back you\'ve been missed!',
+              'Let\'s create an account for you',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
               ),
@@ -54,11 +54,20 @@ class LoginPage extends StatelessWidget {
                 hintText: 'Password',
                 obscureText: true),
             const SizedBox(
+              height: 10,
+            ),
+            // confirm pw
+            MyTextField(
+                controller: _confirmPwController,
+                hintText: 'Confirm Password',
+                obscureText: true),
+
+            const SizedBox(
               height: 30,
             ),
 
             // login button
-            const MyButton(text: 'Login'),
+            const MyButton(text: 'Sign up'),
 
             const SizedBox(
               height: 30,
@@ -70,14 +79,14 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Not a memeber? ',
+                  'Already have an account? ',
                   style:
                       TextStyle(color: Theme.of(context).colorScheme.primary),
                 ),
                 GestureDetector(
                   onTap: onTap,
                   child: Text(
-                    'Register now',
+                    'Login now',
                     style: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.bold),
