@@ -7,7 +7,7 @@ class RegisterPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pWController = TextEditingController();
   final TextEditingController _confirmPwController = TextEditingController();
-  final Function()? onTap;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {

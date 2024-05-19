@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "161883992499",
+    "project_id": "zchat-377b0",
+    "storage_bucket": "zchat-377b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161883992499:android:278ad868ea2cb82ae8dbc6",
+        "android_client_info": {
+          "package_name": "com.example.zchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxX-xAdlboCZfe84M3w59zzJ-Mp_aad6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

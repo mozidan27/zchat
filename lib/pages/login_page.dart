@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:zchat/components/my_button.dart';
 import 'package:zchat/components/my_text_field.dart';
 
@@ -7,7 +6,7 @@ class LoginPage extends StatelessWidget {
   LoginPage({super.key, required this.onTap});
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pWController = TextEditingController();
-  final Function()? onTap;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
