@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zchat/auth/auth_service.dart';
 import 'package:zchat/components/my_button.dart';
 import 'package:zchat/components/my_text_field.dart';
 
@@ -7,6 +8,26 @@ class LoginPage extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _pWController = TextEditingController();
   final void Function()? onTap;
+
+// login method
+
+  void login(BuildContext context) async {
+    // auth service
+    final authService = AuthService();
+
+    // try login
+    try {
+      await authService.signInWithEmailPassword(
+          _emailController.text, _pWController.text);
+    } catch (e) {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          title: Text(e.toString()),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +78,10 @@ class LoginPage extends StatelessWidget {
             ),
 
             // login button
-            const MyButton(text: 'Login'),
+            MyButton(
+              text: 'Login',
+              onTap: () => login(context),
+            ),
 
             const SizedBox(
               height: 30,

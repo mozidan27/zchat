@@ -9,6 +9,9 @@ class RegisterPage extends StatelessWidget {
   final TextEditingController _confirmPwController = TextEditingController();
   final void Function()? onTap;
 
+// sign up method
+
+  void signup() {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +70,11 @@ class RegisterPage extends StatelessWidget {
             ),
 
             // login button
-            const MyButton(text: 'Sign up'),
+
+            MyButton(
+              text: 'Sign up',
+              onTap: signup,
+            ),
 
             const SizedBox(
               height: 30,
