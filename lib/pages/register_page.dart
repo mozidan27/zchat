@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zchat/auth/auth_service.dart';
 import 'package:zchat/components/my_button.dart';
 import 'package:zchat/components/my_text_field.dart';
 
@@ -11,7 +12,34 @@ class RegisterPage extends StatelessWidget {
 
 // sign up method
 
-  void signup() {}
+  void signup(BuildContext context) {
+    // get auth service
+
+    final auth = AuthService();
+
+    // passwords match -> create user
+    if (_pWController.text == _confirmPwController.text) {
+      try {
+        auth.signUpWithEmailPassword(_emailController.text, _pWController.text);
+        // not match pirnt the exception
+      } catch (e) {
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(e.toString()),
+          ),
+        );
+      }
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+          title: Text("Passwords don't match!"),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +101,7 @@ class RegisterPage extends StatelessWidget {
 
             MyButton(
               text: 'Sign up',
-              onTap: signup,
+              onTap: () => signup(context),
             ),
 
             const SizedBox(
