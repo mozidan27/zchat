@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:zchat/auth/auth_service.dart';
+import 'package:zchat/services/auth/auth_service.dart';
 import 'package:zchat/pages/setting_page.dart';
 
 class MyDrawer extends StatelessWidget {
